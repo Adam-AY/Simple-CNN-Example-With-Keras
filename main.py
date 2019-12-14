@@ -23,9 +23,8 @@ model.add(Dense(10, activation='softmax'))
 
 #training
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-model.fit(x_train, y_train,epochs=1)
+model.fit(x_train, y_train,epochs=2)
 
-val_loss, vall_acc = model.evaluate(x_test, y_test)
 
 #testing our model
 model.save('epic_nim_reader.model')
@@ -33,8 +32,7 @@ new_model = tf.keras.models.load_model('epic_nim_reader.model')
 predictions = new_model.predict(x_test)
 print(predictions)
 
-print(np.argmax(predictions[6]))
+print(np.argmax(predictions[7]))
 
-plt.imshow(x_train[0], cmap = plt.cm.binary)
+plt.imshow(x_test[7], cmap = plt.cm.binary)
 plt.show()
-print(x_test[6])
