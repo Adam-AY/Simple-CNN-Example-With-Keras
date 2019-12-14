@@ -20,6 +20,8 @@ install [Anaconda distribution](https://www.anaconda.com/distribution/), it cont
 
 The MNIST dataset is automatically downloaded by Keras
 
+![MNIST](digits.png)
+
 ```python
 # this will download the dataset
 (x_train, y_train), (x_test,y_test) = mnist.load_data()
